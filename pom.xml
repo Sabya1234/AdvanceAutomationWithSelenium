@@ -83,7 +83,11 @@
           <artifactId>maven-surefire-plugin</artifactId>
           <version>2.22.1</version>
           <configuration>
-            <suiteXmlFiles>testng.xml</suiteXmlFiles>
+            <suiteXmlFiles>
+              <!--<suiteXmlFile>testng.xml</suiteXmlFile>-->
+              <!--suppress UnresolvedMavenProperty -->
+              <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+            </suiteXmlFiles>
           </configuration>
         </plugin>
         <plugin>

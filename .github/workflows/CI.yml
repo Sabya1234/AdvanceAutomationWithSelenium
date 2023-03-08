@@ -35,7 +35,9 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
      - name: Build with Maven and Test
-       run: mvn clean install
+       env:
+         TESTNG_FILE: 'testng.xml'
+       run: mvn clean install -DsuiteXmlFile=$TESTNG_FILE
      - name: Upload target folder
        uses: actions/upload-artifact@v2
        with:
