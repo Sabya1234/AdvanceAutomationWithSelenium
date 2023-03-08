@@ -53,6 +53,11 @@
       <artifactId>commons-codec</artifactId>
       <version>1.9</version>
     </dependency>
+    <dependency>
+      <groupId>org.zaproxy</groupId>
+      <artifactId>zap-clientapi</artifactId>
+      <version>1.11.0</version>
+    </dependency>
 
 
   </dependencies>
