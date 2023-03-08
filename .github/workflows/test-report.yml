@@ -15,6 +15,6 @@ jobs:
         if: success() || failure()
         with:
           name: Test Results                  # Name of the check run which will be created
-          path: target/surefire-reports/TEST-TestSuite.xml                     # Path to test results (inside artifact .zip)
+          path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml                     # Path to test results (inside artifact .zip)
           reporter: java-junit
           java-version: 11
