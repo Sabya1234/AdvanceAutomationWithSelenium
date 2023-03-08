@@ -8,6 +8,8 @@ jobs:
   report:
     runs-on: ubuntu-latest
     steps:
+      - name: CheckOut
+        uses: actions/checkout@v3
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
