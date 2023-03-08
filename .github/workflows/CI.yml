@@ -12,8 +12,9 @@ on:
   workflow_dispatch:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+  permissions: write-all
+#  pull_request:
+#    branches: [ "master" ]
 
 jobs:
   build:
@@ -46,6 +47,14 @@ jobs:
        with:
           name: target
           path: target/surefire-reports
-     - name: Surefire Report
-       uses: ScaCap/action-surefire-report@v1.5.0
+#     - name: Surefire Report
+#       uses: ScaCap/action-surefire-report@v1.5.0
+     - name: Test Reporter
+       uses: dorny/test-reporter@v1.6.0
+       if: success() || failure()
+       with:
+             artifact: target            # artifact name
+             name: Test Results                  # Name of the check run which will be created
+             path: 'TEST-TestSuite.xml'                     # Path to test results (inside artifact .zip)
+             reporter: java-junit
 
