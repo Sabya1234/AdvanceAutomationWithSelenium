@@ -1,0 +1,18 @@
+name: 'Test Report'
+on:
+  workflow_run:
+    workflows: ['Java CI with Maven']                     # runs after CI workflow
+    types:
+      - completed
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test Report
+        uses: dorny/test-reporter@v1
+        if: success() || failure()
+        with:
+          name: Test Results                  # Name of the check run which will be created
+          path: target/surefire-reports/TEST-TestSuite.xml                     # Path to test results (inside artifact .zip)
+          reporter: java-junit
+          java-version: 11
