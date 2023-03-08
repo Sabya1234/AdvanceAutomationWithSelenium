@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: CheckOut
         uses: actions/checkout@v3
+      - name: Download target folder
+        uses: actions/download-artifact@v2
+        with:
+          name: target
       - name: Test Report
         uses: dorny/test-reporter@v1
         if: success() || failure()
