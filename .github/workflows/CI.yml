@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
   push:
     branches: [ "master" ]
-  permissions: write-all
+
 #  pull_request:
 #    branches: [ "master" ]
 
