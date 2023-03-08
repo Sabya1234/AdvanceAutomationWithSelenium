@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="Selenium QR Code Test">
+        <classes>
+            <class name="QRCode.QRCodeTest">
+                <methods>
+                    <include name="verifyQRCodeTextFromURL"/>
+                    <include name="verifyQRCodeTextFrombase64"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
