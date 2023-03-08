@@ -46,3 +46,15 @@ jobs:
        with:
           name: target
           path: ${{ github.workspace }}/target
+     - name: Download target folder
+       uses: actions/download-artifact@v2
+       with:
+         name: target
+     - name: Test Report
+       uses: dorny/test-reporter@v1
+       if: success() || failure()
+       with:
+         name: Test Results                  # Name of the check run which will be created
+         path: ${{ github.workspace }}/target/surefire-reports/TEST-TestSuite.xml                     # Path to test results (inside artifact .zip)
+         reporter: java-junit
+         java-version: 11
