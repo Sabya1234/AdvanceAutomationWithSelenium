@@ -41,7 +41,7 @@ jobs:
      - name: Build with Maven and Test
        env:
          TESTNG_FILE: 'testng.xml'
-       run: mvn clean install -DsuiteXmlFile=$TESTNG_FILE
+       run: mvn test -DsuiteXmlFile=$TESTNG_FILE
      - name: Upload target folder
        uses: actions/upload-artifact@v2
        with:
