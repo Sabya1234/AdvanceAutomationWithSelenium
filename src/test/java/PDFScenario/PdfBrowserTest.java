@@ -33,6 +33,9 @@ public class PdfBrowserTest {
     String url="https://www.inkit.com/blog/pdf-the-best-digital-document-management";
     @BeforeTest
     public void setup()  {
+       // ChromeOptions opt= new ChromeOptions();
+        //opt.setHeadless(true);
+        //opt.addArguments("--incognito");
         driver= new ChromeDriver();
         driver.get(url);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
@@ -89,12 +92,12 @@ public class PdfBrowserTest {
     }
 
 
-    @AfterTest
-    public void tearDown()
-    {
-        if (driver!=null)
-        {
-            driver.quit();
-        }
-    }
+//    @AfterTest
+//    public void tearDown()
+//    {
+//        if (driver!=null)
+//        {
+//            driver.quit();
+//        }
+//    }
 }
