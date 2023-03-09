@@ -60,8 +60,9 @@ public class AuthWithCDPTest {
     }
 
     /***
-     * using Bidirectional Protocol(internally using CDP), this test will work with Mozilla firefox/safari also cause
-     * here we didnot used CDP
+     *
+     * here we didnot used CDP we used selenium Username and Password class whcih implemnts credential interface
+     * using
      */
 
     @Test

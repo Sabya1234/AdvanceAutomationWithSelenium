@@ -12,9 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -30,7 +28,7 @@ public class QRCodeTest {
 
     private static WebDriver driver;
 
-    @BeforeTest
+    @BeforeMethod
     public void setup() throws InterruptedException{
         ChromeOptions opt=new ChromeOptions();
         opt.addArguments("--headless=new");
@@ -94,7 +92,7 @@ public class QRCodeTest {
         return result.getText();
     }
 
-    @AfterTest
+    @AfterMethod
     public void tearDown()
     {
         if(driver!=null)
